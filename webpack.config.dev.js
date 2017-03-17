@@ -6,7 +6,7 @@ const DashboardPlugin = require("webpack-dashboard/plugin");
 module.exports = {
     devtool: "eval-source-map",
     entry: [
-        "./src/index"
+        "./server/index"
     ],
     output: {
         path: path.join(__dirname, "dist"),
@@ -14,19 +14,21 @@ module.exports = {
     },
     plugins:[
         new DashboardPlugin({
-            port: 3001
+            port: 5001
         }),
         new HtmlWebpackPlugin({
-            template: "./index.html"
+            template: "./server/index.html"
         })
     ],
+    node: {fs: "empty"},
     module: {
         loaders: [{
             test: /\.js$/,
             loaders: ["babel-loader"],
-            include: path.join(__dirname, "src")
+            include: [path.resolve(__dirname, "server"), path.resolve(__dirname, "boethius"), path.resolve(__dirname, "boethius-lang")],
+            exclude: /lang/
         }, {
-            test: /\.html/,
+            test: [/\.bth/, "lang.js"],
             loader: "raw-loader"
         }]
     },

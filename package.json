@@ -4,7 +4,7 @@
   "description": "Gloria's Step",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dashboard -p 3001 -- webpack-dev-server --config webpack.config.dev.js --hot --port 3000",
+    "dev": "webpack-dashboard -p 5001 -- webpack-dev-server --config webpack.config.dev.js --hot --port 5000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Scott LaFaro (Arr. Sean Mullen)",
