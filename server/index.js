@@ -1,8 +1,8 @@
-import "../boethius/styles/index.css";
+import "./boethius/styles/index.css";
 import {map} from "lodash";
 import WebFont from "webfontloader";
-import compile from "../boethius-lang/src/main";
-import Scored from "../boethius/src/Scored";
+import compile from "./boethius-lang/src/main";
+import Scored from "./boethius/src/Scored";
 import layout from "../src/glorias-step-layout.json";
 import bth from "../src/glorias-step.bth";
 
