@@ -23,6 +23,10 @@ module.exports = {
     node: {fs: "empty"},
     module: {
         loaders: [{
+            test: /\.css$/,
+            loaders: ["style-loader", "css-loader"]
+        },
+        {
             test: /\.js$/,
             loaders: ["babel-loader"],
             include: [path.resolve(__dirname, "server"), path.resolve(__dirname, "boethius"), path.resolve(__dirname, "boethius-lang")],
@@ -30,6 +34,9 @@ module.exports = {
         }, {
             test: [/\.bth/, "lang.js"],
             loader: "raw-loader"
+        }, {
+            test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+            loader : 'file-loader'
         }]
     },
     devServer: {
