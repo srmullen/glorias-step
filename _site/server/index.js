@@ -1,4 +1,3 @@
-import "./boethius/styles/index.css";
 import {map} from "lodash";
 import WebFont from "webfontloader";
 import compile from "./boethius-lang/src/main";
