@@ -30,7 +30,7 @@ module.exports = {
             test: /\.js$/,
             loaders: ["babel-loader"],
             include: [path.resolve(__dirname, "server")],
-            exclude: [path.join(__dirname, "server/boethius-lang/lang"), "node_modules"]
+            exclude: [path.join(__dirname, "server/boethius-lang/lang"), /node_modules/]
         }, {
             test: [/\.bth/, "lang.js"],
             loader: "raw-loader"
