@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dashboard -p 5001 -- webpack-dev-server --config webpack.config.dev.js --hot --port 5000",
+    "prod": "webpack --config webpack.config.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Scott LaFaro (Arr. Sean Mullen)",

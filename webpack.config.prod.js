@@ -1,10 +1,9 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const DashboardPlugin = require("webpack-dashboard/plugin");
 
 module.exports = {
-    devtool: "eval-source-map",
+    devtool: "source-map",
     entry: [
         "./server/index"
     ],
@@ -13,9 +12,12 @@ module.exports = {
         filename: "bundle.js"
     },
     plugins:[
-        new DashboardPlugin({
-            port: 5001
+        new webpack.optimize.UglifyJsPlugin({
+            compressor: {
+                warnings: false
+            }
         }),
+        new webpack.optimize.OccurrenceOrderPlugin(),
         new HtmlWebpackPlugin({
             template: "./server/index.html"
         })
@@ -29,17 +31,14 @@ module.exports = {
         {
             test: /\.js$/,
             loaders: ["babel-loader"],
-            include: [path.resolve(__dirname, "server")],
-            exclude: [path.join(__dirname, "server/boethius-lang/lang"), "node_modules"]
+            include: [path.join(__dirname, "server")],
+            exclude: path.join(__dirname, "server/boethius-lang/lang")
         }, {
-            test: [/\.bth/, "lang.js"],
+            test: [/\.bth/],
             loader: "raw-loader"
         }, {
             test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
             loader : 'file-loader'
         }]
-    },
-    devServer: {
-        contentBase: "./dist"
     }
 }
