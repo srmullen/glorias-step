@@ -1,0 +1,18 @@
+<h1 id="virtual-score">Virtual Score</h1>
+
+<p>Boethius currently renders it’s entire self every time the render function is called.
+I do not expect that this is the optimal approach for being able to quickly change
+the score on the fly as is the expectation with Gradus. Response to new input needs
+to render rapidly.</p>
+
+<ol>
+  <li>Boethius needs to be responsible for creating its own objects.</li>
+  <li>Need JSON structure for representing the Score. MusicJSON?</li>
+</ol>
+
+<p>At first the smallest group to be rerendered will be a System.</p>
+
+<h2 id="todo">TODO</h2>
+<ul>
+  <li>Remove Line.render code. The concept of line doesn’t make sense to render.</li>
+</ul>
