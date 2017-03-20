@@ -1,0 +1,3 @@
+[submodule "server/boethius"]
+	path = server/boethius
+	url = https://github.com/srmullen/boethius.git
