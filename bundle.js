@@ -54333,13 +54333,13 @@ exports.push([module.i, "/*\n * Material Brown theme\n *  50 - #EFEBE9\n * 100 -
 /* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/_/boethius-server/boethius/styles/fonts/gonvillealpha11.ttf";
+module.exports = __webpack_require__.p + "assets/gonvillealpha11.ttf";
 
 /***/ }),
 /* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/_/boethius-server/boethius/styles/fonts/gonvillepart1.ttf";
+module.exports = __webpack_require__.p + "assets/gonvillepart1.ttf";
 
 /***/ }),
 /* 86 */
